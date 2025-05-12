@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analyst and Dev Oliver</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;700&family=Oxanium:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="img/sitesite.png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container-logo">
+            <div class="logo-imagem">
+                <a href="#">
+                    <img src="img/logohome.png" alt="Logotipo">
+                </a>
+            </div>
+            <h1 class="logo-texto">
+                <a href="#"><span class="the-texto">ANALYST</span> <span class="ol1ver-texto">OLIVER</span></a>
+            </h1>
+
+            <div class="menu">
+                <ul>
+                    <li><h1><a href="https://discord.gg/b5G2HhUH54" target="_blank">Discord</a></h1></li>
+                    <li><h1><a href="https://instagram.com/oliver29s" target="_blank">Instagram</a></h1></li>
+                    <li><h1><a href="https://github.com/ols29" target="_blank">GitHub</a></h1></li>
+                    <li><h1><a href="https://twitter.com/user29oliver" target="_blank">Twitter</a></h1></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <div class="texto-central" id="textoCentral">
+        <h1 class="typewriter">Seja bem-vindo ao meu portfólio</h1>
+        <br>
+        <h2 class="typewriter">Sou Oliver Casto, Desenvolvedor de softwares empresariais</h2>
+        <br>
+        <p class="typewriter">Saiba mais sobre minhas especialidades abaixo!</p>
+    </div>
+
+    <div id="particles-js"></div>
+
+    <div class="container" id="cardContainer">
+        <!-- CARD 1 OLIVER -->
+        <div class="card">
+            <img src="img/iconoliver.jpg" alt="Circle img">
+            <div class="content">
+                <h2></h2>
+                <h1>Quem é Oliver?</h1>
+                <br>
+                <p>Sou um desenvolvedor de software. Apaixonado por tecnologia e focado em soluções empresariais.</p>
+                <a href="#">Saiba mais sobre minha história</a>
+            </div>
+        </div>
+
+        <!-- CARD 2 ESPECIALIDADES -->
+        <div class="card card2">
+            <img src="img/especialidades.png" alt="Circle img">
+            <div class="content">
+                <h2></h2>
+                <h3>Especialidades</h3>
+                <p>Desenvolvimento de Softwares, Testes e QA de Softwares, Gestão e projetos de TI, Infraestrutura de Redes...</p>
+                <a href="#">Saiba mais</a>
+            </div>
+        </div>
+
+        <!-- CARD 3 PROJETOS -->
+        <div class="card card3">
+            <img src="img/projetos.png" alt="Circle img">
+            <div class="content">
+                <h2></h2>
+                <h3>Projetos</h3>
+                <p>Acesse todos os meus projetos no botão abaixo</p>
+                <a href="#">ACESSAR</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/app.js"></script>
+
+    <script>
+        //efeito de tilt nos cards
+        VanillaTilt.init(document.querySelectorAll(".card"), {
+            max: 25,
+            speed: 400,
+            glare: true,
+            "max-glare": 1
+        });
+    
+        //chama os elementos
+        const texto = document.getElementById('textoCentral');
+        const container = document.getElementById('cardContainer');
+    
+      //ou rolar 50px escondem os textos
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {  
+                texto.classList.add('hidden'); 
+            } else {
+                texto.classList.remove('hidden');  //texto aparece novament
+            }
+        });
+    </script>
+    
+
+</body>
+
+</html>

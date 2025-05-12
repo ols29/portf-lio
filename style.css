@@ -1,0 +1,388 @@
+/* ============================
+   RESET DE ESTILOS GLOBAIS
+   ============================ */
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+/* ============================
+   FONTES
+   ============================ */
+:root {
+    --font-base2: "Bai Jamjuree", sans-serif;
+    --font-base: "Oxanium", sans-serif;
+}
+
+body {
+    font-family: var(--font-base2), sans-serif;
+    background-color: black;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-base), sans-serif;
+}
+
+/* ============================
+   CABEÇALHO
+   ============================ */
+header {
+    width: 15%;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    z-index: 2;
+    align-items: center;
+    padding: 20px 0;
+}
+
+/* ============================
+   MEU TEXTO CENTRAL
+   ============================ */
+.texto-central {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    margin-top: 50px;
+    font-size: 2em;
+    animation: subir 1s ease-out forwards;
+    opacity: 0;
+}
+
+.texto-central h1 {
+    text-shadow: 2px 2px 8px rgba(0, 255, 255, 0.6);
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@keyframes subir {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================
+   EFEITO TYPEWRITER NO TEXTO CENTRAL
+   ============================ */
+.typewriter {
+    color: rgb(255, 255, 255);
+    font-family: monospace;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid white;
+    animation: typing 3s steps(30, end), blink 0.75s step-end infinite;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+/* ============================
+   LOGO E TEXTO
+   ============================ */
+.container-logo {
+    display: flex;
+    align-items: center;
+    color: rgb(0, 0, 0);
+    margin-left: 30px;
+}
+
+.logo-imagem {
+    width: 60px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.logo-imagem img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 50%;
+    transition: filter 0.6s ease;
+}
+
+.logo-imagem:hover img {
+    filter: brightness(0.5);
+    animation: rotateImage 4s linear infinite;
+}
+
+@keyframes rotateImage {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.logo-texto a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    transition: color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+}
+
+.logo-texto a {
+    animation: pulseGlow 2s infinite;
+}
+
+@keyframes pulseGlow {
+    0% {
+        text-shadow: 0 0 5px #00f7ff, 0 0 10px #00c6ff;
+    }
+    50% {
+        text-shadow: 0 0 15px #00f7ff, 0 0 30px #0072ff;
+    }
+    100% {
+        text-shadow: 0 0 5px #00f7ff, 0 0 10px #00c6ff;
+    }
+}
+
+@keyframes fadeToBlack {
+    0% { color: #ffffff; }
+    100% { color: #000000; }
+}
+
+.the-texto, .ol1ver-texto {
+    animation: fadeToBlack 5s ease-in-out infinite;
+}
+
+.ol1ver-texto {
+    color: rgb(255, 255, 255);
+    transition: color 0.3s ease;
+    margin-left: 15px;
+}
+
+.logo-texto a:hover .ol1ver-texto {
+    color: rgb(0, 0, 0);
+}
+
+.logo-texto a:hover {
+    color: white;
+}
+
+/* ============================
+   MENU
+   ============================ */
+.menu {
+    position: fixed;
+    top: 20px;
+    right: 50px;
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+}
+
+.menu li {
+    margin-right: 20px;
+}
+
+.menu li:last-child {
+    margin-right: 0;
+}
+
+.menu li a {
+    font-size: 24px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.menu li a:hover {
+    color: rgb(0, 0, 0);
+}
+
+/* ============================
+   PARTICULAS
+   ============================ */
+#particles-js {
+    width: 100%;
+    height: 100vh;
+    background-color: #007acc;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url("");
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* ============================
+   CONTAINER PRINCIPAL
+   ============================ */
+.container {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    gap: 10px;
+    margin-top: -150px;
+    flex-wrap: wrap;
+}
+
+/* ============================
+   CARD - ESTILOS GERAIS
+   ============================ */
+.card {
+    width: 300px;
+    height: 500px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+    z-index: 1;
+    margin-left: 250px;
+}
+
+.card2 {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.card3 {
+    background-color: rgba(0, 195, 255, 0.2);
+}
+
+/* ============================
+   IMAGEM NO CARD
+   ============================ */
+.card img {
+    position: relative;
+    top: -50px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+/* ============================
+   CONTEÚDO DO CARD
+   ============================ */
+.card .content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.card .content h3 {
+    height: 50px;
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: rgb(0, 0, 0);
+    z-index: 1;
+}
+
+.card .content p {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    font-weight: 300;
+}
+
+.card .content a {
+    position: relative;
+    display: inline-block;
+    padding: 6px 16px;
+    margin-top: 10px;
+    background: #007acc;
+    color: black;
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: 500;
+    box-shadow: 0.5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ============================
+   EFEITO HOVER NO CARD
+   ============================ */
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card:hover .content {
+    opacity: 1;
+}
+
+/* ============================
+   EFEITOS PARA O TEXTO E CARDS
+   ============================ */
+.texto-central.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.6s ease;
+}
+
+.container.centered {
+    justify-content: center;
+    transition: all 0.6s ease;
+}
+
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+/* ============================
+   ANIMAÇÃO DE PISCAR NOS TEXTOS DOS CARDS
+   ============================ */
+@keyframes piscar {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.card .content p,
+.card .content h1,
+.card .content h3 {
+    animation: piscar 1.5s infinite;
+    opacity: 0;
+    visibility: visible;
+    transition: opacity 0.3s ease;
+}
+
+.card:hover .content p,
+.card:hover .content h1,
+.card:hover .content h3 {
+    animation: none;
+    opacity: 1;
+}
